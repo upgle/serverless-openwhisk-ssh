@@ -1,0 +1,22 @@
+service: openwhisk-ssh
+
+provider:
+  name: openwhisk
+  environment:
+
+functions:
+  sshExec:
+    handler: handler.sshExec
+    parameters:
+      CMD: "pwd"
+      HOST: ${file(./config.json):HOST}
+      PORT: ${file(./config.json):PORT}
+      PRIVATE_KEY: ${file(./config.json):PRIVATE_KEY}
+      USER_NAME: ${file(./config.json):USER_NAME}
+      PASSPHRASE: ${file(./config.json):PASSPHRASE}
+      PASSWORD: ${file(./config.json):PASSWORD}
+
+
+# remember to run npm install to download the provider plugin.
+plugins:
+    - serverless-openwhisk
