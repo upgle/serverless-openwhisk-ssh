@@ -1,0 +1,8 @@
+{
+  "HOST": "",
+  "PORT": "22",
+  "PRIVATE_KEY": "./key.pem",
+  "USER_NAME": "",
+  "PASSPHRASE": "",
+  "PASSWORD": ""
+}
